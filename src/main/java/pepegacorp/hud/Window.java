@@ -4,6 +4,11 @@
  */
 package pepegacorp.hud;
 
+import java.io.*;
+import java.net.*;
+import java.nio.file.*;
+import java.util.concurrent.TimeUnit;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -19,12 +24,18 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
  */
 public class Window extends javax.swing.JFrame {
 
+    
+
     Robot r = null;
 
     /**
      * Creates new form Window
      */
     public Window() {
+        
+        AutoUpdater.main(null);
+        
+
         try {
             r = new Robot();
 
@@ -293,7 +304,7 @@ public class Window extends javax.swing.JFrame {
 
         r.keyPress(KeyEvent.VK_ALT);
         r.keyPress(KeyEvent.VK_TAB);
-        r.delay(200);                                                                   
+        r.delay(200);
         r.keyRelease(KeyEvent.VK_TAB);
 
 
