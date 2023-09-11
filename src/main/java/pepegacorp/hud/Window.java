@@ -24,17 +24,14 @@ import javax.swing.plaf.metal.MetalLookAndFeel;
  */
 public class Window extends javax.swing.JFrame {
 
-    
-
     Robot r = null;
 
     /**
      * Creates new form Window
      */
     public Window() {
-        
+
         AutoUpdater.main(null);
-        
 
         try {
             r = new Robot();
@@ -67,7 +64,6 @@ public class Window extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -164,17 +160,10 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setText("Switch app (keep clicking)");
+        jButton11.setText("Switch app");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
-            }
-        });
-
-        jButton12.setText("Done switching");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
             }
         });
 
@@ -192,17 +181,11 @@ public class Window extends javax.swing.JFrame {
                                 .addComponent(jButton1)
                                 .addGap(12, 12, 12)
                                 .addComponent(jButton2)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton12)
-                                .addGap(64, 64, 64))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                                .addComponent(jButton11)
-                                .addGap(35, 35, 35))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
+                        .addComponent(jButton11)
+                        .addGap(35, 35, 35))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -217,7 +200,7 @@ public class Window extends javax.swing.JFrame {
                                 .addComponent(jButton8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton9)))
-                        .addContainerGap())))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,9 +222,7 @@ public class Window extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10)
-                    .addComponent(jButton12))
+                .addComponent(jButton10)
                 .addGap(14, 14, 14))
         );
 
@@ -306,14 +287,14 @@ public class Window extends javax.swing.JFrame {
         r.keyPress(KeyEvent.VK_TAB);
         r.delay(200);
         r.keyRelease(KeyEvent.VK_TAB);
+        r.keyPress(KeyEvent.VK_TAB);
+        r.delay(200);
+        
+        r.keyRelease(KeyEvent.VK_TAB);
+        r.keyRelease(KeyEvent.VK_ALT);
 
 
     }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        r.keyRelease(KeyEvent.VK_TAB);
-        r.keyRelease(KeyEvent.VK_ALT);
-    }//GEN-LAST:event_jButton12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,7 +341,6 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
